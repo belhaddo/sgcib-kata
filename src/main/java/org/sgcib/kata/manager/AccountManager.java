@@ -4,8 +4,6 @@ import org.sgcib.kata.entity.Account;
 import org.sgcib.kata.entity.BasicAccount;
 
 import java.util.*;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class AccountManager {
 
@@ -17,6 +15,10 @@ public class AccountManager {
         this.managedAccounts = new HashMap<>();
     }
 
+    /**
+     *  Singleton Instance
+     * @return
+     */
     public static AccountManager getInstance() {
 
         if (instance == null) {
@@ -28,6 +30,12 @@ public class AccountManager {
     public Map<Long, Account> getManagedAccounts() {
         return managedAccounts;
     }
+
+    /**
+     *  Creates Account
+     * @param id
+     * @return
+     */
 
     public Account createAccount(Long id) {
 

@@ -45,11 +45,19 @@ public abstract class Account implements Manageable {
 
     }
 
+    /**
+     * get the balance's amount
+     * @return
+     */
     @Override
     public BigDecimal checkBalance() {
         return getBalance();
     }
 
+    /**
+     * print the bank account statement
+     * @return
+     */
     @Override
     public String printStatementsHistory() {
 

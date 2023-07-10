@@ -10,6 +10,10 @@ public class BasicAccount extends Account {
         super(id);
     }
 
+    /**
+     * withdraw money with balance validation
+     * @param amount
+     */
     @Override
     public void withdraw(BigDecimal amount) {
 
@@ -22,6 +26,10 @@ public class BasicAccount extends Account {
         }
     }
 
+    /**
+     * make bank account deposit
+     * @param amount
+     */
     @Override
     public void deposit(BigDecimal amount) {
         getOperations().add(new Operation(LocalDate.now(), TransactionType.DEPOSIT,amount));
