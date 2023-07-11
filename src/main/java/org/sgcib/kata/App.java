@@ -14,8 +14,8 @@ public class App
     public static void main( String[] args )
     {
         AccountManager am = AccountManager.getInstance();
-        Account acc1 = am.createAccount(1L);
-        Account acc2 = am.createAccount(2L);
+        Account acc1 = am.createAccount("BASIC", 1L);
+        Account acc2 = am.createAccount("BASIC", 2L);
         System.out.println("Available Accounts : " + am.listAccounts());
 
         acc1.deposit(BigDecimal.TEN);

@@ -1,13 +1,13 @@
 package org.sgcib.kata.manager;
 
 import org.sgcib.kata.entity.Account;
-import org.sgcib.kata.entity.BasicAccount;
 
 import java.util.*;
 
 public class AccountManager {
 
     private static AccountManager instance;
+    private static BankAccountFactory bankAccountFactory = BankAccountFactory.getInstance();
 
     private Map<Long, Account> managedAccounts;
 
@@ -37,15 +37,16 @@ public class AccountManager {
      * @return
      */
 
-    public Account createAccount(Long id) {
+    public Account createAccount(String accountType, Long id) {
 
         if (!managedAccounts.containsKey(id)) {
-            Account newAccount = new BasicAccount(id);
+            Account newAccount = bankAccountFactory.getAccount(accountType, id);
             managedAccounts.put(id, newAccount);
             return newAccount;
         }
-        return managedAccounts.get(id);
-
+        else {
+            throw new IllegalArgumentException("Bank Account of id = '" + id + "' already exist !");
+        }
     }
 
     public List<Long> listAccounts() {

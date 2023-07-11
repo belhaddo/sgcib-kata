@@ -3,14 +3,18 @@ package org.sgcib.kata.entity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.sgcib.kata.BankAccountParentTest;
 
 import java.math.BigDecimal;
 
-public class AccountTest {
+public class AccountTest extends BankAccountParentTest {
     Account acc;
     @BeforeEach
     void setUp() {
+        System.out.println("#### Test Setup before each: ");
         acc = new BasicAccount(1L);
+        System.out.println("#### Test Setup done ");
+
     }
     @Test
     public void testWithdraw() {
