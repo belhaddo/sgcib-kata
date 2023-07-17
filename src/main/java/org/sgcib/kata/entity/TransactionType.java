@@ -1,4 +1,4 @@
-package org.sgcib.kata.entity.dto;
+package org.sgcib.kata.entity;
 
 public enum TransactionType {
     WITHDRAWAL,

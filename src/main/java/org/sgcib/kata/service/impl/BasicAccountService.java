@@ -1,8 +1,8 @@
 package org.sgcib.kata.service.impl;
 
 import org.sgcib.kata.entity.BasicAccount;
-import org.sgcib.kata.entity.dto.Operation;
-import org.sgcib.kata.entity.dto.TransactionType;
+import org.sgcib.kata.entity.Operation;
+import org.sgcib.kata.entity.TransactionType;
 import org.sgcib.kata.service.Manageable;
 
 import java.math.BigDecimal;
