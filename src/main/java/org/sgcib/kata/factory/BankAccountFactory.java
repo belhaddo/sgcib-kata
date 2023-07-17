@@ -7,7 +7,6 @@ public class BankAccountFactory {
 
     private static BankAccountFactory factory;
 
-
     public static BankAccountFactory getInstance() {
         if(factory == null) {
             factory = new BankAccountFactory();

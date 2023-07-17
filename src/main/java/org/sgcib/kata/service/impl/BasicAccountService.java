@@ -14,6 +14,7 @@ public class BasicAccountService implements Manageable {
         if(account.getBalance().subtract(amount).compareTo(BigDecimal.ZERO) >= 0) {
             account.getOperations().add(new Operation(LocalDate.now(), TransactionType.WITHDRAWAL,amount));
             account.setBalance(account.getBalance().subtract(amount));
+            // TODO: replace with Slf4J once available (not allowed in this task)
             System.out.println("Successful Withdrawal operation of the amount : " + amount );
         } else {
             throw new IllegalArgumentException("Account '" +account.getId() + "' Your balance of '" + account.getBalance() + "' doesn't allow the withdrawal of the amount : " + amount);
@@ -24,6 +25,7 @@ public class BasicAccountService implements Manageable {
     public void deposit(BasicAccount account, BigDecimal amount) {
         account.getOperations().add(new Operation(LocalDate.now(), TransactionType.DEPOSIT,amount));
         account.setBalance(account.getBalance().add(amount));
+        // TODO: replace with Slf4J once available (not allowed in this task)
         System.out.println("Successful Deposit operation of the amount : " + amount );
     }
 

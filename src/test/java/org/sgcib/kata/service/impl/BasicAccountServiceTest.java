@@ -15,10 +15,8 @@ public class BasicAccountServiceTest extends BankAccountParentTest {
 
     @BeforeEach
     void setUp() {
-        System.out.println("#### Test Setup before each: ");
         service = new BasicAccountService();
         acc = new BasicAccount(1L);
-        System.out.println("#### Test Setup done ");
 
     }
     @Test

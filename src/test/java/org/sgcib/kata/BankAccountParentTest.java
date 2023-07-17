@@ -21,17 +21,13 @@ public abstract class BankAccountParentTest {
 
     @BeforeEach
      void setUp() {
-        System.out.println("#### Test Setup before each: ");
         Account acc1 = accountManager.createAccount("BASIC",1L);
         Account acc2 = accountManager.createAccount("BASIC",2L);
-        System.out.println("#### Test Setup done ");
 
     }
     @AfterEach
      void tearDown() {
         accountManager.getManagedAccounts().clear();
     }
-
-
 
 }

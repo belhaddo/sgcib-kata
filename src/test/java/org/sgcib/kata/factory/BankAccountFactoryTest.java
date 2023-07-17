@@ -1,4 +1,4 @@
-package org.sgcib.kata.dao;
+package org.sgcib.kata.factory;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
