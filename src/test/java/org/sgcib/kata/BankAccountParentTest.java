@@ -3,7 +3,7 @@ package org.sgcib.kata;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.sgcib.kata.entity.Account;
-import org.sgcib.kata.manager.AccountManager;
+import org.sgcib.kata.service.AccountManager;
 
 
 public abstract class BankAccountParentTest {

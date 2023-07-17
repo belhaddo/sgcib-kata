@@ -1,4 +1,4 @@
-package org.sgcib.kata.manager;
+package org.sgcib.kata.service;
 
 import org.sgcib.kata.entity.Account;
 import org.sgcib.kata.entity.BasicAccount;
