@@ -1,4 +1,4 @@
-package org.sgcib.kata.manager;
+package org.sgcib.kata.factory;
 
 import org.sgcib.kata.entity.Account;
 import org.sgcib.kata.entity.BasicAccount;
@@ -16,6 +16,12 @@ public class BankAccountFactory {
         return factory;
     }
 
+    /**
+     * Factory method which return the right object
+     * @param accountType
+     * @param id
+     * @return
+     */
     public Account getAccount(String accountType, long id) {
         switch (accountType) {
             case "BASIC":

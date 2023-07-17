@@ -1,12 +1,14 @@
-package org.sgcib.kata.manager;
+package org.sgcib.kata.dao;
 
 import org.sgcib.kata.entity.Account;
+import org.sgcib.kata.factory.BankAccountFactory;
 
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
+// class created to simulate the persistence in a Map
 public class AccountManager {
 
     private static AccountManager instance;

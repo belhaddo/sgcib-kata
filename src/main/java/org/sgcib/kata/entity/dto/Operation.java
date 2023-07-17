@@ -1,4 +1,4 @@
-package org.sgcib.kata.entity;
+package org.sgcib.kata.entity.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

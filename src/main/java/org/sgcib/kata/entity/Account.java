@@ -1,10 +1,12 @@
 package org.sgcib.kata.entity;
 
+import org.sgcib.kata.entity.dto.Operation;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Account implements Manageable {
+public abstract class Account {
     private Long id;
     private BigDecimal balance;
     private List<Operation> operations = new ArrayList<>();
@@ -33,45 +35,5 @@ public abstract class Account implements Manageable {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
-    }
-
-    @Override
-    public void withdraw(BigDecimal amount) {
-
-    }
-
-    @Override
-    public void deposit(BigDecimal amount) {
-
-    }
-
-    /**
-     * get the balance's amount
-     * @return
-     */
-    @Override
-    public BigDecimal checkBalance() {
-        return getBalance();
-    }
-
-    /**
-     * print the bank account statement
-     * @return
-     */
-    @Override
-    public String printStatementsHistory() {
-
-        StringBuilder statements = new StringBuilder();
-        statements.append("Account id : " + getId());
-        statements.append("\n");
-        statements.append("Account Operations : ");
-        statements.append("\n");
-
-        getOperations().forEach(op ->
-                statements.append("    | " + op.getTransactionDate() + " | " + op.getType() + " | " + op.getAmount() + "\n")
-        );
-
-        statements.append("Account balance : " + getBalance());
-        return statements.toString();
     }
 }
