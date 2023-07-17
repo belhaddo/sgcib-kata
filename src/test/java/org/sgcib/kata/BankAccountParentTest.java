@@ -3,17 +3,11 @@ package org.sgcib.kata;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.sgcib.kata.entity.Account;
-import org.sgcib.kata.dao.AccountManager;
-import org.sgcib.kata.factory.BankAccountFactory;
+import org.sgcib.kata.manager.AccountManager;
 
 
 public abstract class BankAccountParentTest {
-    private  BankAccountFactory factory = BankAccountFactory.getInstance();
     private AccountManager accountManager = AccountManager.getInstance();
-
-    public BankAccountFactory getFactory() {
-        return factory;
-    }
 
     public AccountManager getAccountManager() {
         return accountManager;

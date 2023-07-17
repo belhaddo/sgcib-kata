@@ -1,7 +1,7 @@
-package org.sgcib.kata.dao;
+package org.sgcib.kata.manager;
 
 import org.sgcib.kata.entity.Account;
-import org.sgcib.kata.factory.BankAccountFactory;
+import org.sgcib.kata.entity.BasicAccount;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -12,8 +12,6 @@ import java.util.ArrayList;
 public class AccountManager {
 
     private static AccountManager instance;
-    private static BankAccountFactory bankAccountFactory = BankAccountFactory.getInstance();
-
     private Map<Long, Account> managedAccounts;
 
     private AccountManager() {
@@ -41,11 +39,26 @@ public class AccountManager {
      * @param id
      * @return
      */
+    /**
+     * Factory method which return the right object since we could have multiple account types
+     * @param accountType
+     * @param id
+     * @return
+     */
+    public Account accountFactory(String accountType, long id) {
+        switch (accountType) {
+            case "BASIC":
+                return new BasicAccount(id);
+        }
+
+        throw new IllegalArgumentException("Type '"+ accountType + "' can't be resolved !");
+
+    }
 
     public Account createAccount(String accountType, Long id) {
 
         if (!managedAccounts.containsKey(id)) {
-            Account newAccount = bankAccountFactory.getAccount(accountType, id);
+            Account newAccount = accountFactory(accountType, id);
             managedAccounts.put(id, newAccount);
             return newAccount;
         }
