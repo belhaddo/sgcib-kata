@@ -16,7 +16,7 @@ public class BankAccountFactory {
     }
 
     /**
-     * Factory method which return the right object
+     * Factory method which return the right object since we could have multiple account types
      * @param accountType
      * @param id
      * @return
